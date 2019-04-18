@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Edit dialog</h1>
+<div mat-dialog-content>
+    <div class="form-inline">
+      <div class="col-md-4">
+        <label>ID</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="data.id" readonly="true" />
+      </div>
+    </div>
+    <div class="form-inline">
+      <div class="col-md-4">
+        <label>Name</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="data.name" />
+      </div>
+    </div>
+    <div class="form-inline">
+      <div class="col-md-4">
+        <label>Description</label>
+      </div>
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="data.description" />
+      </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>

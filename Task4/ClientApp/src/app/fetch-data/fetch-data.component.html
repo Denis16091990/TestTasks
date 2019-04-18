@@ -1,0 +1,34 @@
+<h1>Search string app</h1>
+<div class="panel">
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="text" placeholder="search string" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-8">
+        <button class="btn btn-primary" (click)="findItem(text)">Find</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <p *ngIf="!items"><em>Items not found...</em></p>
+
+  <table class='table table-striped' *ngIf="items">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td><button class="btn btn-primary" (click)="editItem(item)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
